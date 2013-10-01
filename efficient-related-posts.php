@@ -307,8 +307,30 @@ class efficientRelatedPosts extends RangePlugin {
 						'permalink'		=> get_permalink($related_post->ID)
 					);
 				}
+
+				/*
+				 * Include post excerpt; generate excerpt if one is not available.
+				 * @TODO Create an option in the plugin settings to make the excerpt optional
+				 */
+				$content_post = get_post($p['ID']);
+
+				if($content_post->post_excerpt) {
+					$excerpt = $content_post->post_excerpt;
+				} else {
+					$strings = preg_split('/(\.|!|\?)\s/', strip_tags($content_post->post_content), 2, PREG_SPLIT_DELIM_CAPTURE);
+					$excerpt = apply_filters('the_content', $strings[0] .  $strings[1]);
+				}
+
+				$content_post = get_post($p['ID']);
+				if($content_post->post_excerpt) {
+					$excerpt = $content_post->post_excerpt;
+				} else {
+					$strings = preg_split('/(\.|!|\?)\s/', strip_tags($content_post->post_content), 2, PREG_SPLIT_DELIM_CAPTURE);
+					$excerpt = apply_filters('the_content', $strings[0] .  $strings[1]);
+				}
+
 				$title = apply_filters( 'erp-related-link-content', wptexturize( $p['post_title'] ), $p, $settings );
-				$link = '<a href="' . esc_url( $p['permalink'] ) . '" title="' . esc_attr( wptexturize( $p['post_title'] ) ) . '">' . $title . '</a>';
+				$link = '<a href="' . esc_url( $p['permalink'] ) . '" title="' . esc_attr( wptexturize( $p['post_title'] ) ) . '">' . $title . '<span>&thinsp;—&thinsp;' . strip_tags($excerpt) . '</span></a>';
 				$link = apply_filters( 'erp-related-link', $link, $p, $settings );
 				$output .= "<li>{$link}</li>";
 			}
