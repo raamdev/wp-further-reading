@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: IndiePub Further Reading
+ * Plugin Name: IndiePublisher Further Reading
  * Plugin URI: http://independentpublisher.me/plugins/indiepub-further-reading/
  * Description: A related posts plugin that works quickly even with thousands of posts and tags
  * Version: 0.1
