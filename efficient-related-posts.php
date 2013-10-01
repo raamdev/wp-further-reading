@@ -1,12 +1,16 @@
 <?php
 /**
- * Plugin Name: Efficient Related Posts
- * Plugin URI: http://xavisys.com/wordpress-plugins/efficient-related-posts/
+ * Plugin Name: IndiePub Further Reading
+ * Plugin URI: http://independentpublisher.me/plugins/indiepub-further-reading/
  * Description: A related posts plugin that works quickly even with thousands of posts and tags
- * Version: 0.4.1
- * Author: Aaron D. Campbell
- * Author URI: http://xavisys.com/
- * Text Domain: efficient-related-posts
+ * Version: 0.1
+ * Author: Raam Dev
+ * Author URI: http://raamdev.com
+ * Text Domain: indiepub-further-reading
+ */
+
+/**
+ * This plugin is a fork of the Efficient Related Posts plugin by Aaron D. Campbell (http://xavisys.com/)
  */
 
 /**

@@ -1,6 +1,5 @@
 === Efficient Related Posts ===
-Contributors: aaroncampbell
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9996714
+Contributors: raamdev
 Tags: related posts, posts, related, seo
 Requires at least: 2.8
 Tested up to: 3.7
