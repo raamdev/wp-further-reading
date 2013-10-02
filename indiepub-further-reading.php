@@ -312,14 +312,6 @@ class efficientRelatedPosts extends RangePlugin {
 				 * Include post excerpt; generate excerpt if one is not available.
 				 * @TODO Create an option in the plugin settings to make the excerpt optional
 				 */
-				$content_post = get_post($p['ID']);
-
-				if($content_post->post_excerpt) {
-					$excerpt = $content_post->post_excerpt;
-				} else {
-					$strings = preg_split('/(\.|!|\?)\s/', strip_tags($content_post->post_content), 2, PREG_SPLIT_DELIM_CAPTURE);
-					$excerpt = apply_filters('the_content', $strings[0] .  $strings[1]);
-				}
 
 				$content_post = get_post($p['ID']);
 				if($content_post->post_excerpt) {
