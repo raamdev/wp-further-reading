@@ -288,12 +288,7 @@ class efficientRelatedPosts extends RangePlugin {
 
 		$relatedPosts = get_post_meta($post->ID, '_efficient_related_posts', true);
 
-		if ( empty($relatedPosts) || $settings['num_to_display'] == 0 ){
-			/**
-			 * @todo The before and after setting should apply to this too
-			 */
-			$output .= "<li>{$settings['no_rp_text']}</li>";
-		} else {
+		if ( !empty($relatedPosts) && $settings['num_to_display'] > 0 ) {
 			$relatedPosts = array_slice($relatedPosts, 0, $settings['num_to_display']);
 			foreach ( $relatedPosts as $p ) {
 				/**
@@ -330,7 +325,7 @@ class efficientRelatedPosts extends RangePlugin {
 
 		$output = "<ul class='related_post'>{$output}</ul>";
 
-		if ( !empty($settings['title']) )
+		if ( !empty($settings['title']) && !empty($relatedPosts) && $settings['num_to_display'] > 0 )
 			$output = "<h3 class='related_post_title'>{$settings['title']}</h3>{$output}";
 
 		$output = apply_filters( 'erp-related-links-output', $output, $p, $settings );
