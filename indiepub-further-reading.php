@@ -53,6 +53,15 @@ class efficientRelatedPosts extends RangePlugin {
 		add_filter( $this->_slug .'-opt-erp', array( $this, 'filterSettings' ) );
 		add_action( 'erp-show-related-posts', array( $this, 'relatedPosts' ) );
 		add_filter( 'erp-get-related-posts', array( $this, 'getRelatedPosts' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'registerStylesheet' ) );
+	}
+
+	/**
+	 * Register stylesheet
+	 */
+	function registerStylesheet() {
+		wp_register_style( 'indiepub-further-reading-css', plugins_url( '/style.css', __FILE__ ), array(), '1.0' );
+		wp_enqueue_style( 'indiepub-further-reading-css' );
 	}
 
 	protected function _post_settings_init() {
