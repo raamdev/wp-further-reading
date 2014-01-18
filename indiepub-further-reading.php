@@ -33,8 +33,8 @@ class efficientRelatedPosts extends RangePlugin {
 	protected function _init() {
 		$this->_hook = 'efficientRelatedPosts';
 		$this->_file = plugin_basename( __FILE__ );
-		$this->_pageTitle = __( 'Efficient Related Posts', $this->_slug );
-		$this->_menuTitle = __( 'Related Posts', $this->_slug );
+		$this->_pageTitle = __( 'IndiePub Further Reading', $this->_slug );
+		$this->_menuTitle = __( 'Further Reading', $this->_slug );
 		$this->_accessLevel = 'manage_options';
 		$this->_optionGroup = 'erp-options';
 		$this->_optionNames = array('erp');
