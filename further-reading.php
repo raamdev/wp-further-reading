@@ -1,12 +1,12 @@
 <?php
 /**
- * Plugin Name: IndiePub Further Reading
- * Plugin URI: http://independentpublisher.me/plugins/indiepub-further-reading/
+ * Plugin Name: Further Reading
+ * Plugin URI: http://independentpublisher.me/plugins/further-reading/
  * Description: A related posts plugin that works quickly even with thousands of posts and tags
  * Version: 0.1
  * Author: Raam Dev
  * Author URI: http://raamdev.com
- * Text Domain: indiepub-further-reading
+ * Text Domain: further-reading
  */
 
 /**
@@ -33,7 +33,7 @@ class efficientRelatedPosts extends RangePlugin {
 	protected function _init() {
 		$this->_hook = 'efficientRelatedPosts';
 		$this->_file = plugin_basename( __FILE__ );
-		$this->_pageTitle = __( 'IndiePub Further Reading', $this->_slug );
+		$this->_pageTitle = __( 'Further Reading', $this->_slug );
 		$this->_menuTitle = __( 'Further Reading', $this->_slug );
 		$this->_accessLevel = 'manage_options';
 		$this->_optionGroup = 'erp-options';
@@ -60,8 +60,8 @@ class efficientRelatedPosts extends RangePlugin {
 	 * Register stylesheet
 	 */
 	function registerStylesheet() {
-		wp_register_style( 'indiepub-further-reading-css', plugins_url( '/style.css', __FILE__ ), array(), '1.0' );
-		wp_enqueue_style( 'indiepub-further-reading-css' );
+		wp_register_style( 'further-reading-css', plugins_url( '/style.css', __FILE__ ), array(), '1.0' );
+		wp_enqueue_style( 'further-reading-css' );
 	}
 
 	protected function _post_settings_init() {

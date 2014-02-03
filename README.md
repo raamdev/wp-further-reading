@@ -1,2 +1,2 @@
-indiepub-further-reading
+further-reading
 ========================
